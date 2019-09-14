@@ -1,0 +1,55 @@
+#include "stdafx.h"
+#include "iostream"
+#include "cstdio"
+#include "stdlib.h"
+#include "conio.h"
+#include "math.h"
+using namespace std;
+
+//**Prototipo*//
+float leervalor();
+void leer_ref(float *B);
+void suma(float *A, float B,float *S);
+float resta(float *A, float *B, float R);
+
+int main()
+{
+	float A,B,R=0, S=0,rest;
+	A = leervalor();
+	leer_ref(&B);
+	suma(&A,B,&S);
+	cout << "La Suma de los dos numeros es:" << S << endl;
+	 rest=resta(&A,&B, R);
+	 cout << "La resta es:" << rest;
+
+	system("pause>null");
+	return 0;
+}
+
+
+//*Definicion de funcion*//
+float leervalor()
+{
+	float A;
+	cout << "Ingrese el primer Numero" << endl;
+	cin >> A;
+	
+	return (A);
+}
+void leer_ref(float *B)
+{
+	cout << "Ingrese el segundo Numero" << endl;
+	cin >> *B;
+
+}
+void suma(float *A, float B,float *S)
+{
+		*S = *A + B;
+}
+float resta(float *A, float *B, float R)
+{
+	R = abs(*A - *B);
+	return (R);
+
+	
+}
