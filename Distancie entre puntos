@@ -1,0 +1,40 @@
+#include "stdafx.h"
+#include "math.h"
+#include "iostream"
+#include "cstdio"
+#include "stdlib.h"
+
+using namespace std;
+
+int main()
+{
+	double x1, x2, x3, y1, y2, y3, d1, d2, d3;
+	cout << "Punto 1" << endl;
+	cout << "Ingrese coordenadas en (x, y) respectivamente"<< endl;
+	cin >> x1 >> y1;
+	cout << "Punto 2" << endl;
+	cout << "Ingrese coordenadas en (x, y) respectivamente" << endl;
+	cin >> x2 >> y2;
+	cout << "Punto 3" << endl;
+	cout << "Ingrese coordenadas en (x, y) respectivamente" << endl;
+	cin >> x3 >> y3;
+
+
+	d1 = sqrt(powf((x2 - x1), 2) + powf((y2 -y1),2));
+	d2 = sqrt(powf((x3 - x1), 2) + powf((y3 - y1), 2));
+	d3 = sqrt(powf((x3 - x2), 2) + powf((y3 - y2), 2));
+
+	if(d1>d2 && d1>d3)
+	{
+		cout << "La distancia mayor es" << d1 << endl;
+	}
+	else if (d2 > d1 && d2 > d3)
+		{ 
+		cout << "La distancia mayor es" << d2 << endl;
+	}
+	else {
+		cout << "La distancia mayor es" << d3 << endl;
+	}
+	system("pause>null");
+	return 0;
+}
