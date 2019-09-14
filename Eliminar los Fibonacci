@@ -1,0 +1,43 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#define MAX 100
+using namespace std;
+
+void cargar(int vec[], int n);
+bool verificar_fibo(int n);
+void eliminar_fibo(int vec[], int &n);
+void mostrar(int vec[], int n);
+
+void main(){
+	int vec[MAX],n;
+	cout << "Ingrese N: ";
+	cin >> n;
+
+	cargar(vec,n);
+	eliminar_fibo(vec,n);
+	mostrar(vec,n);
+
+	getch();
+}
+
+void cargar(int vec[], int n){
+	for(int i=0;i<n;i++){
+		cin >> vec[i];
+	}
+}
+
+bool verificar_fibo(int n){
+	int fibo=0,a=1,b=0; // fibo=1 -> verifica desde {1,1,2,3,5,8,13,21...}
+						// fibo=0 -> verifica desde {0,1,1,2,3,5,8,13,21...}
+	while(fibo<n){
+		fibo=a+b;
+		a=b;
+		b=fibo;
+	}
+	if(fibo==n){
+		return true;
+	}else{
+		return false;
+	}
+}
